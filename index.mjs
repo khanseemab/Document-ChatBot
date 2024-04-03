@@ -6,8 +6,6 @@ config();
 const model = new ChatAnthropic({
   temperature: 0.9,
   modelName: "claude-3-sonnet-20240229",
-  // In Node.js defaults to process.env.ANTHROPIC_API_KEY,
-  anthropicApiKey: process.env.ANTHROPIC_API_KEY,
   maxTokens: 1024,
 });
 
