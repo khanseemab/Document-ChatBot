@@ -1,0 +1,187 @@
+const About = {
+  json_format: `{ "description": "About the company description", "mission": "Mission of the company" }`,
+  prompt:
+    "I want you act as a seasoned buiseness analyst. Go through all the imformation available to you about $company_name. From this information extract a company description and its mission in as much detail as possible.",
+  dbKey: "about",
+};
+
+const SWOTAnalysis = {
+  json_format: `{ "strengths": "Array of object and each object conatains name and description like [{"name":"Name of strength","description":"Description of this strength"}], "weaknesses": "Array of object and each object conatains name and description like [{"name":"Name of weakness","description":"Description of this weakness"}], "opportunities": "Array of object and each object conatains name and description like [{"name":"Name of opportunity","description":"Description of this opportunity"}], "threats": "Array of object and each object conatains name and description like [{"name":"Name of threat","description":"Description of this threat"}] }`,
+  prompt: `Act as a Business Consultant from a top management company that speaks and writes fluent English. Please provide a detailed SWOT analysis on this company. Layout the SWOT Analysis in the following format- For each area, list:
+
+    Strength: Describe the strengths and explain why it's considered as strengths.
+    
+    Point 1: [Title] - [Description] Point 2: [Title] - [Description] Point 3: [Title] - [Description] Point 4: [Title] - [Description]
+    
+    Weakness: Outline weaknesses and the reason they are selected
+    
+    Point 1: [Title] - [Description] Point 2: [Title] - [Description] Point 3: [Title] - [Description] Point 4: [Title] - [Description]
+    
+    Opportunities: Discuss opportunities and their potential benefits.
+    
+    Point 1: [Title] - [Description] Point 2: [Title] - [Description] Point 3: [Title] - [Description] Point 4: [Title] - [Description]
+    
+    Threats: Describe threats and why they poses a risk.
+    
+    Point 1: [Title] - [Description] Point 2: [Title] - [Description] Point 3: [Title] - [Description] Point 4: [Title] - [Description]
+    
+    Please ensure each point is detailed and provides insight into this Company's strategy and character. Make sure there are 4 points in each of the categories`,
+  dbKey: "swotanalysis",
+};
+
+const Marketposition = {
+  json_format: `{ "corepurpose": "Array of object and each object contains name and description like [{"name":"Name of corepurpose","description":"Description of this corepurpose"}], "positioning": "Array of object and each object conatains name and description like [{"name":"Name of positioning","description":"Description of this positioning"}], "keydifferentiators": "Array of object and each object conatains name and description like [{"name":"Name of keydifferentiators","description":"Description of this keydifferentiators"}], "brandpersonality": "Array of object and each object conatains name and description like [{"name":"Name of brandpersonality","description":"Description of this brandpersonality"}] }`,
+  prompt: `Act as a subject matter expert with 20 years of experience in business writing, and I need a comprehensive analysis for this Company. Please provide a detailed position map focusing on four key areas. For each area, list exactly four points with a title and a detailed description. The areas are:
+
+  Core Purpose: Define this Company's fundamental reason for existence beyond profit-making.
+  
+  Point 1: [Title] - [Description] Point 2: [Title] - [Description] Point 3: [Title] - [Description] Point 4: [Title] - [Description]
+  
+  Positioning: Describe how this Company differentiates itself in the market and its unique stance within the industry.
+  
+  Point 1: [Title] - [Description] Point 2: [Title] - [Description] Point 3: [Title] - [Description] Point 4: [Title] - [Description]
+  
+  Key Differentiator: Identify what sets this Company apart from its competitors in terms of attributes or services.
+  
+  Point 1: [Title] - [Description] Point 2: [Title] - [Description] Point 3: [Title] - [Description] Point 4: [Title] - [Description]
+  
+  Brand Personality: Characterize this Company's brand personality and the tone it conveys to its audience.
+  
+  Point 1: [Title] - [Description] Point 2: [Title] - [Description] Point 3: [Title] - [Description] Point 4: [Title] - [Description]
+  
+  Please ensure each point is detailed and provides insight into this Company's strategy and character. Make sure there are 4 points in each of the categories.`,
+  dbKey: "marketposition",
+};
+
+const TopClients = {
+  json_format: `{ "topclients":"Array of string , each string is a client name like ["Name of Clients"] }`,
+  prompt: `I want you to go through all the information available to you. Act as a business analyst. Give me top clients names of the given company named $company_name.`,
+  dbKey: "topclients",
+};
+
+const Industries = {
+  json_format: `{ "industries":"Array of string , each string is a industry name like ["Name of Industry"] }`,
+  prompt:
+    "I want you to go through all the information available to you. Act as a business analyst. I'm researching this company and I'm interested in understanding the range of industries they serve. Could you provide me with a list of the name of the industry verticals that this company caters to?",
+  dbKey: "industries",
+};
+
+const Products = {
+  json_format: `{ "products":"Array of object and each object contains name and description for example- [{"name":"Name of product","description":"Description of this product"}] }`,
+  prompt:
+    "I want you to go through all the information available to you. Act as a buiseness analyst. Extract names of all products mentioned in the information along with a detailed description for each product.",
+  dbKey: "products",
+};
+const Services = {
+  json_format: `{ "services":"Array of object and each object contains name and description for example- [{"name":"Name of service","description":"Description of this service"}] }`,
+  prompt: `I want you to go through all the information available to you. Act as a business analyst. Extract names of all services mentioned in the information along with a detailed description for each service`,
+  dbKey: "services",
+};
+
+const Leadership = {
+  json_format: `{ "leadership":"Array of object and each object contains name,designation and linkedin url like [{"name":"Name of persona","designation":"Description of this persona","linkedin":"Linkedin url of this person, if given in the provided file"}] }`,
+  prompt:
+    "I want you to go through all the information available to you. Act as a business analyst. Get me full name, designations and links to linkedin profile wherever available of the leadership team of this company named $company_name.",
+  dbKey: "leadership",
+};
+
+const Summary = {
+  json_format: `{"summary":"Summary of the company" }`,
+  prompt: `I want you to go through all the information available to you. Act as a business analyst.Summarise the products, services or solution that the firm offers in 50 words or fewer. There is no need to preface your response with any acknowledgements`,
+  dbKey: "summary",
+};
+
+const Blogs = {
+  json_format: `{ "url":"url of the webpage that contains all blogs", "titles": Array of object and each object contains title and blogtype like [{"title":"Title of blogs","blogtype":"category of the blog"}]}`,
+  prompt: `I want you to go through all the information available to you. Act as a business analyst.Read through all the blogs  listed on this company website. Then 1.Give me the titles of all the blogs on the $company_name website. 2.Categorize the blog into one of these five Keyword Driven, Thought Leadership, Instructional, Company update, other`,
+  dbKey: "blogs",
+};
+
+const InitialMessage = {
+  json_format: `{"Summary": Name of the Company: "About": CEO of the company: "Products of the company": "Top Clients of the company":}`,
+  prompt: `Can you please read the provided file and give the information?`,
+  dbKey: "initial",
+};
+
+const prospectPrompt = {
+  json_format: `{"Demographic": "Array of string , each string is a demographic detail of the person", "Psychographic": "Array of string , each string is a psychographic detail of the person", "PainPoints": "Array of string , each string is a painpoint of the person", "Motivations": "Array of string , each string is a motivation of the person", "Challenges": "Array of string , each string is a challenge of the person", "Interests": "Array of string , each string is an interest of the person", "TonOfVoice": "Tone of voice of the person"}`,
+  prompt: `I want you to go through the attached document. Generate a persona for $name providing the following information:
+  1. His pain points 
+  2. His motivations
+  3. His interests 
+  4. His buying behaviours 
+  Also indicate in what tone of voice would John like to be spoken in.`,
+  dbKey: "prospect",
+};
+
+const newProspectPrompt = {
+  prompt: `Go through the attached file, act as a psychologist and create a user profile for $name. Do include details in bullets about their psychographics, buying behavoiur, demographics, pain points, interests and motivations. Have a minimum of 3 bullets. Also include the tone of voice they would like to be spoken in.`,
+};
+
+const emailPrompt = {
+  json_format: `{"subject": "subject of the email", "body": "body of the email", "from": "CEO of the company", "to": "Name of the person", "company": "Name of the company", "prospect_name": "Name of the person", "company_name": "Name of the company}`,
+  prompt: `I want you to act as a expert copy writer. I want you to craft an email in first person as follows.
+  
+  1. A compelling subject line that starts with the first name of the prospect and makes the prospect open the email. It should incorporate the tone of voice the prospect would like to be spoken to. 
+  2. The first paragraph in the email should address and elaborate the pain points of the prospect as he navigates the company in the industry the company operates in.
+  3. The second paragraph should introduce $company_name's products and talk of the clear benefit it delivers
+  3. The third paragraph should have a clear call to action of getting the prospect to fix up a demo by clicking on a link.
+  4. The email is from the CEO of $company_name`,
+  dbKey: "email",
+};
+const newEmailPrompt = {
+  json_format: `{"subject": "subject of the email", "body": "body of the email", "from": "CEO of the company", "to": "Name of the person", "company": "Name of the company", "prospect_name": "Name of the person", "company_name": "Name of the company}`,
+
+  prompt: `I want you to act as an expert copywriter who works for $company_name. Your job is to write an email to $name from $prospect_company. In your email, do address the pain points of $name and how the strengths of $company_name can help $name. The email should be in the tone of voice that $name would like to be spoken to. You may also include the most relevant themes of $industry that $company_name can address, only if they make sense. Otherwise do not include $industry themes. Please also include a compelling subject line. Include name of $name in the subject line. The email should be succinct, without superlatives and flowery language in plain speak english.`,
+  dbKey: "email",
+};
+
+const newPersonaPrompt = {
+  prompt: `Create a detailed persona based on the LinkedIn profile data of $name and the data of the company where they are currently employed. Incorporate both the user's professional background and achievements as well as insights into the company's culture, industry, and values.
+
+  User Profile Data:
+  
+  Name: [User's Name]
+  LinkedIn Headline: [User's LinkedIn Headline]
+  Current Position: [User's Current Position]
+  Company: [User's Current Company]
+  Industry: [User's Current Company Industry]
+  Location: [User's Location]
+  Summary/Bio: [User's LinkedIn Summary/Bio]
+  Skills & Expertise: [List of User's Skills & Expertise]
+  Experience: [User's Previous Work Experience, if relevant]
+  Education: [User's Educational Background]
+  Professional Achievements: [User's Notable Achievements or Projects]
+  Company Data:
+  
+  Company Name: [User's Current Company Name]
+  Industry: [Company's Industry]
+  Size: [Company's Size: Small/Medium/Large]
+  Location: [Company's Location]
+  Mission Statement: [Company's Mission Statement, if available]
+  Company Culture: [Insights into the company's culture, values, and work environment]
+  Products/Services: [Description of the products/services offered by the company]
+  Market Position: [Company's position in the market, any notable achievements or recognitions]
+  Key Competitors: [Main competitors of the company]
+  Notable Projects/Initiatives: [Any significant projects or initiatives undertaken by the company]
+  Persona Description:
+  [Based on the provided data, craft a detailed persona that incorporates insights into the user's professional background, skills, aspirations, as well as the company's culture, industry standing, and values. Provide a narrative that paints a vivid picture of the individual's role within the company and their contributions to its success.]`,
+};
+
+const getAllPrompts = () => {
+  const allPrompts = [
+    About,
+    Products,
+    Services,
+    Industries,
+    Leadership,
+    TopClients,
+    Summary,
+    Marketposition,
+    SWOTAnalysis,
+    // Blogs,
+    // prospectPrompt,
+    // emailPrompt,
+  ];
+  return allPrompts;
+};

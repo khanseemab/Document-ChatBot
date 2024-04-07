@@ -16,6 +16,7 @@ dotenv.config();
 // PDF Load
 const getDocAnswer = async () => {
   const loader = new PDFLoader("documents/budget_speech.pdf");
+  // const pdf = new PDFLoader("documents/giver.pdf");
 
   console.log("Loading Document :");
   const docs = await loader.load();
@@ -82,7 +83,7 @@ const getDocAnswer = async () => {
   //   });
   // Question
 
-  const question = "What is the summary of the budget ?";
+  const question = "What is the Theme of g20";
 
   const answer = await chain.invoke({ question: question });
   console.log("Answer : ", answer);

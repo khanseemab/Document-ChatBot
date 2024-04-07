@@ -10,7 +10,7 @@ const model = new ChatAnthropic({
 });
 
 async function getResponse() {
-  const res = await model.invoke("name of the 3rd planet from the sun?");
+  const res = await model.invoke("distance between earth and moon?");
   console.log(res);
 }
 
